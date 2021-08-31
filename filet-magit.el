@@ -44,4 +44,9 @@
            (completing-read "Select a recipe:"
                             (mapcar 'filet--recipe-name filet-recipe-list))))
 
+(defun filet-add-recipe (name ingredients instructions)
+  (interactive "sName: \nsIngredients: \nsInstructions: ")
+  (setq filet-recipe-list (filet-new-recipe name ingredients instructions))
+  (message "Added recipe \"%s\"" name))
+
 ;;; filet-magit ends here
