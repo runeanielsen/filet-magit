@@ -33,9 +33,10 @@
 (defun filet--recipe-name (recipe)
   (alist-get 'name recipe))
 
-(defun filet-new-recipe (name)
-  (interactive "sName: ")
-  (message "Created recipe \"%s\"" name))
+(defun filet-new-recipe (name ingredients instructions)
+  `((name . ,name)
+    (ingredients . ,ingredients)
+    (instructions . ,instructions)))
 
 (defun filet-show-recipe ()
   (interactive)
