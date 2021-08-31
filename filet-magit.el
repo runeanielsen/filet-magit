@@ -39,12 +39,14 @@
     (instructions . ,instructions)))
 
 (defun filet-show-recipe ()
+  "Select a recipe to be displayed."
   (interactive)
   (message "Recipe: %s"
            (completing-read "Select a recipe:"
                             (mapcar 'filet--recipe-name filet-recipe-list))))
 
 (defun filet-add-recipe (name ingredients instructions)
+  "Add a recipe to the list."
   (interactive "sName: \nsIngredients: \nsInstructions: ")
   (setq filet-recipe-list (filet-new-recipe name ingredients instructions))
   (message "Added recipe \"%s\"" name))
